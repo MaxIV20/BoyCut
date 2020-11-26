@@ -1,6 +1,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <meta
     name="description"
     content="Атмосферный тату-салон с профессиональными мастерами и большим опытом работы. Создадим эскиз по Вашим желаниям. Примеры наших работ на сайте."
@@ -1182,7 +1183,7 @@
       let btn = document.getElementById("more__work");
       let contGallery = document.getElementById("moreGallery");
 
-      btn.onpointerup = function () {
+      btn.onclick = function () {
         contGallery.classList.toggle("showGallery");
 
         if (contGallery.classList.contains("showGallery")) {
@@ -1305,7 +1306,7 @@
 
       // переключение вкладок
 
-      works.onpointerup = function () {
+      works.onclick = function () {
         let count = 0;
 
         for (let i of galleryItems) {
@@ -1320,7 +1321,7 @@
         interior.classList.remove("gallery-item-active");
       };
 
-      interior.onpointerup = function () {
+      interior.onclick = function () {
         let count = 0;
 
         for (let i of galleryItems) {
@@ -1337,14 +1338,14 @@
       };
 
       // увеличение фотографий
-      parentGalleryItems.onpointerup = function (event) {
+      parentGalleryItems.onclick = function (event) {
         let currentItem = event.target.closest(".gallery-item");
 
         if (!currentItem) return;
 
         let cloneCurrentItem = currentItem.cloneNode(true);
 
-        cloneCurrentItem.onpointerup = function () {
+        cloneCurrentItem.onclick = function () {
           this.remove();
         };
 

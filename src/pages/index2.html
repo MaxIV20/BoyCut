@@ -1,6 +1,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <meta
     name="description"
     content="Стрижем и бреем с 2016 года. Знаем толк в стиле и создании мужских причесок. Мастера - профессионалы своего дела. Удобная онлайн запись на сайте в пару кликов."
@@ -1110,7 +1111,7 @@
       let btn = document.getElementById("more__work");
       let contGallery = document.getElementById("moreGallery");
 
-      btn.onpointerup = function () {
+      btn.onclick = function () {
         contGallery.classList.toggle("showGallery");
 
         if (contGallery.classList.contains("showGallery")) {
