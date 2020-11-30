@@ -6,9 +6,9 @@
     name="description"
     content="Барбершоп с 2016 года. Мастера-барберы подберут идеальную прическу под Ваш стиль. Записывайтесь онлайн на сайте за пару кликов."
   />
-  <link rel="stylesheet" href="assets/css/app.css" />
-  <link rel="stylesheet" href="assets/css/titleMain.css" />
-  <link rel="stylesheet" href="assets/css/mediesTitle.css" />
+  <link rel="stylesheet" href="assets/css/app.css?v2" />
+  <link rel="stylesheet" href="assets/css/titleMain.css?v2" />
+  <link rel="stylesheet" href="assets/css/mediesTitle.css?v2" />
   <link rel="icon" href="assets/img/burbIcon/favicon.ico" />
   <title>Boy Cut в Краснодаре. Барбершоп и тату-салон в центре города</title>
 </head>
@@ -436,6 +436,37 @@
     crossorigin="anonymous"
   ></script>
   <script src="assets/js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"
+  ></script>
+  <script type="text/javascript">
+    // вешаем маску на телефон
+    $(".tatto-phone-mask").inputmask("+7(999)999-99-99");
+
+    // добавляем правило для валидации телефона
+    jQuery.validator.addMethod("checkMaskPhone", function (value, element) {
+      return /\+\d{1}\(\d{3}\)\d{3}-\d{2}-\d{2}/g.test(value);
+    });
+
+    // получаем нашу форму по class
+    var form = $(".form-request");
+
+    // включаем валидацию в форме
+    form.validate();
+
+    // вешаем валидацию на поле с телефоном по классу
+    $.validator.addClassRules({
+      "tatto-phone-mask": {
+        checkMaskPhone: true,
+      },
+    });
+  </script>
   <script
     type="text/javascript"
     src="//w15769.yclients.com/widgetJS"

@@ -6,10 +6,10 @@
     name="description"
     content="Атмосферный тату-салон с профессиональными мастерами и большим опытом работы. Создадим эскиз по Вашим желаниям. Примеры наших работ на сайте."
   />
-  <link rel="stylesheet" href="assets/css/app.css" />
-  <link rel="stylesheet" href="assets/css/tattooMain.css" />
-  <link rel="stylesheet" href="assets/css/medies.css" />
-  <link rel="stylesheet" href="assets/css/mediesTattoo.css" />
+  <link rel="stylesheet" href="assets/css/app.css?v2" />
+  <link rel="stylesheet" href="assets/css/tattooMain.css?v2" />
+  <link rel="stylesheet" href="assets/css/medies.css?v2" />
+  <link rel="stylesheet" href="assets/css/mediesTattoo.css?v2" />
   <link rel="icon" href="assets/img/tattooIcon/favicon.ico" />
   <title>Тату-салон "Terminator". You will be back.</title>
 </head>
@@ -1154,6 +1154,37 @@
     crossorigin="anonymous"
   ></script>
   <script src="assets/js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"
+  ></script>
+  <script type="text/javascript">
+    // вешаем маску на телефон
+    $(".tatto-phone-mask").inputmask("+7(999)999-99-99");
+
+    // добавляем правило для валидации телефона
+    jQuery.validator.addMethod("checkMaskPhone", function (value, element) {
+      return /\+\d{1}\(\d{3}\)\d{3}-\d{2}-\d{2}/g.test(value);
+    });
+
+    // получаем нашу форму по class
+    var form = $(".form-request");
+
+    // включаем валидацию в форме
+    form.validate();
+
+    // вешаем валидацию на поле с телефоном по классу
+    $.validator.addClassRules({
+      "tatto-phone-mask": {
+        checkMaskPhone: true,
+      },
+    });
+  </script>
   <script
     type="text/javascript"
     src="//w15769.yclients.com/widgetJS"
