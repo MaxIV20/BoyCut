@@ -1030,12 +1030,13 @@
           <span class="userForm--title-blackWord">Давай к нам!</span>
         </h1>
         <p class="userForm--subTitle">Заполни форму и мы перезвоним</p>
-        <form class="userForm--frame">
+        <form action="scripts/master.php" method="post" class="userForm--frame">
           <div class="userForm-inputs">
             <input
               required
               type="text"
               placeholder="Имя"
+              name="name"
               class="userFormItem userFormItem--iName"
               maxlength="30"
             />
@@ -1044,12 +1045,14 @@
               type="text"
               placeholder="8 (XXX)-XXX-XX-XX"
               maxlength="16"
+              name="phone"
               class="userFormItem userFormItem--iNumber numberInput"
             />
             <input
               required
               type="email"
               placeholder="Электронная почта"
+              name="email"
               class="userFormItem userFormItem--iEmail"
               maxlength="30"
             />
@@ -1061,12 +1064,14 @@
               placeholder="Ссылка на работы или соц. сети"
               class="userFormItem userFormItem--iName"
               maxlength="30"
+              name="link"
             />
             <input
               required
               type="text"
               placeholder="Скиллы"
               maxlength="16"
+              name="skill"
               class="userFormItem userFormItem--iNumber userFormItemSkills"
             />
           </div>
@@ -1095,7 +1100,7 @@
           в своем городе
         </h1>
         <p class="userForm--subTitle">Заполни форму и мы перезвоним</p>
-        <form class="userForm--frame">
+        <form action="scripts/terminator.php" method="post" class="userForm--frame">
           <div class="userForm-inputs">
             <input
               required
@@ -1103,12 +1108,14 @@
               placeholder="Имя"
               class="userFormItem userFormItem--iName"
               maxlength="30"
+              name="name"
             />
             <input
               required
               type="text"
               placeholder="8 (XXX)-XXX-XX-XX"
               maxlength="16"
+              name="phone"
               class="userFormItem userFormItem--iNumber numberInput"
             />
             <input
@@ -1117,6 +1124,7 @@
               placeholder="Район Открытия"
               class="userFormItem userFormItem--iPlace"
               maxlength="30"
+              name="district"
             />
           </div>
           <button type="submit" class="userForm--makeCall btn">
