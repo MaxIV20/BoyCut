@@ -16,9 +16,6 @@
 <body class="body">
   {{> titlePup}}
   <div class="header__nav-adaptive hidden" style="justify-content: center">
-    <!--<div class="burger btn" id="burgerHeaderNavMobile">
-    <img src="assets/img/burgerOpen.png" alt="Открыть" width="14px" height="12px">
-  </div>-->
     <div class="mainLogo btn">
       <a href="./">
         <svg
@@ -335,16 +332,13 @@
         <ul class="mTitle-redDiv--aStudy">
           <li class="mTitle-redDiv--aStudyItem">
             <h2 class="mTitle-redDiv--aStudyItemTitle">barber shop</h2>
-            <a class="mTitle-redDiv--aStudyItemLink ms_booking" href="#">
-              <div class="mTitle-redDiv--aStudyItemBtn btn">записаться</div>
-            </a>
+            <div class="mTitle-redDiv--aStudyItemBtn btn ms_booking">
+              записаться
+            </div>
           </li>
           <li class="mTitle-redDiv--aStudyItem">
             <h2 class="mTitle-redDiv--aStudyItemTitle">tattoo salon</h2>
-            <div
-              onclick="yaCounter43179004.reachGoal('zapist')"
-              class="mTitle-redDiv--aStudyItemBtn btn titlePopup"
-            >
+            <div class="mTitle-redDiv--aStudyItemBtn btn titlePopup">
               записаться
             </div>
           </li>
@@ -429,14 +423,8 @@
       </a>
     </div>
   </footer>
-
-  <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"
-  ></script>
-  <script src="assets/js/app.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/js/app.js"></script>
   <script
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"
@@ -453,12 +441,6 @@
     jQuery.validator.addMethod("checkMaskPhone", function (value, element) {
       return /\+\d{1}\(\d{3}\)\d{3}-\d{2}-\d{2}/g.test(value);
     });
-
-    // получаем нашу форму по class
-    var form = $(".form-request");
-
-    // включаем валидацию в форме
-    form.validate();
 
     // вешаем валидацию на поле с телефоном по классу
     $.validator.addClassRules({

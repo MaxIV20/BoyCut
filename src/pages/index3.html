@@ -602,10 +602,7 @@
             </g>
           </svg>
 
-          <button
-            onclick="yaCounter43179004.reachGoal('zapistatu')"
-            class="header__title__btn titlePopup header-tattoo-btn"
-          >
+          <button class="header__title__btn titlePopup header-tattoo-btn">
             записаться
           </button>
         </div>
@@ -661,7 +658,6 @@
                 class="message-btn message-btn-whats"
                 href="https://wa.me/+79882422220"
                 target="_blank"
-                onclick="ym(63481894,'reachGoal','whatsapp'); return true;"
               >
                 <div class="message-btn__text">
                   <span>Напиши в</span>
@@ -709,7 +705,6 @@
                 class="message-btn message-btn-teleg"
                 href="https://msngr.link/tg/@boycutkrd"
                 target="_blank"
-                onclick="ym(63481894,'reachGoal','telegram'); return true;"
               >
                 <div class="message-btn__text">
                   <span>в</span>
@@ -1038,15 +1033,13 @@
               placeholder="Имя"
               name="name"
               class="userFormItem userFormItem--iName"
-              maxlength="30"
             />
             <input
               required
               type="text"
-              placeholder="8 (XXX)-XXX-XX-XX"
-              maxlength="16"
               name="phone"
-              class="userFormItem userFormItem--iNumber numberInput"
+              class="userFormItem tatto-phone-mask"
+              placeholder="+7(___)___-__-__"
             />
             <input
               required
@@ -1054,7 +1047,6 @@
               placeholder="Электронная почта"
               name="email"
               class="userFormItem userFormItem--iEmail"
-              maxlength="30"
             />
           </div>
           <div class="userForm-inputs">
@@ -1100,30 +1092,32 @@
           в своем городе
         </h1>
         <p class="userForm--subTitle">Заполни форму и мы перезвоним</p>
-        <form action="scripts/terminator.php" method="post" class="userForm--frame">
+        <form
+          action="scripts/terminator.php"
+          method="post"
+          class="userForm--frame"
+          autocomplete="off"
+        >
           <div class="userForm-inputs">
             <input
               required
               type="text"
               placeholder="Имя"
               class="userFormItem userFormItem--iName"
-              maxlength="30"
               name="name"
             />
             <input
               required
               type="text"
-              placeholder="8 (XXX)-XXX-XX-XX"
-              maxlength="16"
               name="phone"
-              class="userFormItem userFormItem--iNumber numberInput"
+              class="userFormItem tatto-phone-mask"
+              placeholder="+7(___)___-__-__"
             />
             <input
               required
               type="text"
               placeholder="Район Открытия"
               class="userFormItem userFormItem--iPlace"
-              maxlength="30"
               name="district"
             />
           </div>
@@ -1138,29 +1132,6 @@
   <footer class="footer">
     <p class="copy">2013-2019. Boy-Cut Barbershop. All rights reserved</p>
   </footer>
-
-  <script type="text/javascript">
-    (function (m, e, t, r, i, k, a) {
-      m[i] =
-        m[i] ||
-        function () {
-          (m[i].a = m[i].a || []).push(arguments);
-        };
-      m[i].l = 1 * new Date();
-      (k = e.createElement(t)),
-        (a = e.getElementsByTagName(t)[0]),
-        (k.async = 1),
-        (k.src = r),
-        a.parentNode.insertBefore(k, a);
-    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-    ym(63481894, "init");
-  </script>
-  <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"
-  ></script>
   <script src="assets/js/app.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script
@@ -1179,12 +1150,6 @@
     jQuery.validator.addMethod("checkMaskPhone", function (value, element) {
       return /\+\d{1}\(\d{3}\)\d{3}-\d{2}-\d{2}/g.test(value);
     });
-
-    // получаем нашу форму по class
-    var form = $(".form-request");
-
-    // включаем валидацию в форме
-    form.validate();
 
     // вешаем валидацию на поле с телефоном по классу
     $.validator.addClassRules({

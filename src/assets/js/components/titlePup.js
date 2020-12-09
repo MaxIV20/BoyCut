@@ -30,14 +30,3 @@ mainPupInput.focus(function () {
   });
 });
 
-// document
-//   .querySelector("#pupTraing_iPhone")
-//   .addEventListener("keypress", (e) => {
-//     if (
-//       (e.code.match(/(Digit)|(Numpad)/i) === null &&
-//         e.code.match("Backspace") === null) ||
-//       e.target.value.length > 11
-//     ) {
-//       e.preventDefault();
-//     }
-//   });

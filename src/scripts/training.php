@@ -1,15 +1,15 @@
 <?
 $to = "boycutkrd23@gmail.com";
-$subject = "Хочу открыть Терминатор";
+$subject = "Обучение Барберингу";
 $name = $_POST['name'];
-$message = $_POST['phone'];
-$district = $_POST['district'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
 $from = "noreply@mail.com";
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 $headers .= "From: <".$from.">\r\n";
 
-if (mail($to,$subject,"Имя: ".$name." Телефон: ".$message." Район: ".$district,$headers)) {
+if (mail($to,$subject,"Имя: ".$name." Телефон: ".$phone." Email: ".$email,$headers)) {
 	header('Location: https://boycutkrd.ru/doneForm.html');
 }
 else {

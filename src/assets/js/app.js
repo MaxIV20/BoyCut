@@ -28,9 +28,7 @@ import './plugins/slick.min'
 // PARTS:
 
 import './components/mobMenu';
-import './components/mainPup';
 import './components/titlePup';
 import './components/slideBarMasters';
 import './components/burberServices';
 import './components/burbersGallery';
-import './components/forms';
